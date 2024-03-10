@@ -5,7 +5,7 @@ export default function Navbar(){
             <ul>
                 <li><a href="#section3">Features</a></li>
                 <li><a href="#section5">Team</a></li>
-                <li><a href="#section6">Sign In</a></li>
+                <li><a href="/BasicExample">Sign In</a></li>
             </ul>
         </nav>
 

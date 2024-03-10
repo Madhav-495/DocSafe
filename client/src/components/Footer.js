@@ -2,7 +2,7 @@ export default function Footer(){
     return (
         <footer>
             <div className="footer">
-                <img className="logo" src="../images/logo.svg" alt=""/>
+                {/* <img className="logo" src="../images/logo.svg" alt=""/> */}
                 <div className="footwrap">
                     <div className="foots">
                     <div className="location">
