@@ -7,7 +7,9 @@ import App from './App';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <div className="LOGIN"> {/* Wrap App with a div and assign the class name LOGIN */}
+      <App />
+    </div>
   </React.StrictMode>
 );
 
