@@ -1,18 +1,6 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@700&display=swap');
-/* font-family: 'Open Sans', sans-serif;*/
-/*font-family: 'Raleway', sans-serif; */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
-
-body{
-    margin: 0;
-    padding:0;
-    font-family: "Open Sans", sans-serif;
-}
-
-=======
->>>>>>> ab77b858eab6783032ae9cdcb4346d2363250a3a
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
 
