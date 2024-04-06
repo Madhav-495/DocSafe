@@ -1,3 +1,5 @@
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Complaint from "./components/Complaint";
 import Credits from "./components/Credits";
 import Footer from "./components/Footer";
@@ -10,23 +12,22 @@ import Section4 from "./components/Section4";
 import Section5 from "./components/Section5";
 import Section6 from "./components/Section6";
 import Profile  from "./components/Profile"
+import TextEditor from "./components/TextEditor";
+import Sidebars from "./components/Sidebars";
+import Home from './components/Home'
 function App() {
   return (
     <>
-      {/* <Complaint /> */}
-      <Profile />
+      <BrowserRouter >
+        <Routes>
+          <Route path='/'  element = {<Home />} />
+          <Route path='/Login'  element = {<Login />} />
+          <Route path='/Sidebar'  element = {<Sidebars />} />
+          <Route path='/Profile' element = {<Profile/>} /> 
+        </Routes>
+      </BrowserRouter>
     </>
-    // <div classNameName="App">
-    //     <Navbar/>
-    //     <Section1/>
-    //     <Section2/>
-    //     <Section3/>
-    //     <Section4/>
-    //     <Section5/>
-    //     <Section6/>
-    //     <Footer/>
-    //     <Credits/>
-    // </div>
+    
 
   );
 }
