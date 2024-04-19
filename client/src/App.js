@@ -24,6 +24,7 @@ function App() {
           <Route path='/Login'  element = {<Login />} />
           <Route path='/Sidebar'  element = {<Sidebars />} />
           <Route path='/Profile' element = {<Profile/>} /> 
+          <Route path='/Complaint' element={<Complaint></Complaint>} />
         </Routes>
       </BrowserRouter>
     </>

@@ -1,39 +1,37 @@
 const express = require('express')
 const router = express.Router();
-const mongoose = require('mongoose')
-const multer = require('multer')
-const ProfileSchema  = require('../models/Profile')
-const storage = multer.memoryStorage() ;
-const upload = multer({storage})
-router.post('/' , upload.single('photo') , async(req,res) => {
-    const base64encoding = req.file.buffer.toString('base64');
-    const Profile = new ProfileSchema({
-        name:req.body.name,
-        department:req.body.department,
-        Image:base64encoding,
-        email:req.body.email,
-        password:req.body.password,
-        regno:(req.body.regno) ? req.body.regno : "",
-    })
-    try {
-        const checkUserData = await ProfileSchema.findOne({email:req.body.email})
-        if (checkUserData)
-        {
-            res.status(401).json({
-                ok:false ,
-                message : "User Already Registered"
+const Profile = require('../models/Profile')
+const {generateToken} = require('../Controllers/jwt')
+router.post('/', async (req, res) => {
+    const Name = req.body.name;
+    const Email = req.body.email;
+    const Password = req.body.password;
+    const Id = req.body.id;
+    const UserData = await Profile.findOne({ regno: Id });
+    if (UserData) {
+        res.status(409).json({
+            mssg: "User Already Existed"
+        })
+    }
+    else {
+        try {
+            const UserProfile = new Profile({
+                name: Name,
+                email: Email,
+                password: Password,
+                regno: Id,
             })
-        }
-        else
-        {
-            await Profile.save() ;
-            res.status(200).json({
-                ok:true ,
-                message:"User registerd successfully"
+            await UserProfile.save();
+            const token = await generateToken(Id);
+            res.status(201).json({
+                mssg: "User Created Successfully",
+                token: token,
             })
+
         }
-    } catch (error) {
-        console.log(error) ;
+        catch (error) {
+            console.log(`error in saving data ${error}`)
+        }
     }
 })
 module.exports = router;

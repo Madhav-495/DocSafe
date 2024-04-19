@@ -9,12 +9,11 @@ const ProfileSchema = mongoose.Schema
     department :
     {
         type:String,
-        required:true,
     } ,
     Image :
     {
         type:String,
-        required:true,
+        // required:true,
     },
     email :
     {

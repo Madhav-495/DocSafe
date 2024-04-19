@@ -16,7 +16,7 @@ const Sidebars = () => {
     return (
         <>
             {sidebarVisible && (
-                <div className='h-screen w-1/6 rounded-lg flex justify-between flex-col items-center border border-yellow-500 bg-slate-500'>
+                <div className='h-screen w-full rounded-lg flex justify-between flex-col items-center border border-yellow-500 bg-slate-500'>
                     <div className="flex justify-end items-center w-full h-10 mr-3 mb-5 " onClick={toggleSidebar}>
                         <CiMenuBurger />
                     </div>
